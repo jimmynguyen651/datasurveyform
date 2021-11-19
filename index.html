@@ -1,1 +1,63 @@
-<h1> test </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="datasurveycss.css">
+  <script async src="https://www.google.com/recaptcha/api.js">  </script>
+
+  <title></title>
+</head>
+<body>
+    <form action ="resultsverificationpage.html" method="get"> <!-- Form 1-->
+      <div>
+        <input type = "text"name ="lastname" placeholder = "Last Name">
+        <input type = "text"name ="fistname" placeholder = "First Name">
+      </div>
+      <div>
+        None <input type = "radio"name ="none">
+        Student <input type = "radio"name ="student">
+        Professor <input type = "radio"name ="professor">
+        Staff<input type = "radio"name ="staff">
+        Retired <input type = "radio"name ="retired">
+      </div>
+      <div>
+        <input type = "text"name ="height" placeholder = "Height (Feet, Inches)">
+      </div>
+      <div>
+        <input type = "text"name ="phone" placeholder = "Phone Number">
+      </div>
+      <div>
+        <input type = "text"name ="address" placeholder = "Address with Zip Code">
+      </div> 
+      <div>
+        Email <input type = "radio"name ="email">
+        Phone <input type = "radio"name ="phone">
+        Facebook <input type ="radio"name ="facebook">
+        Twitter <input type = "radio"name ="twitter">
+        Surface Mail <input type = "radio"name ="surfacemail">
+        Personal Visit <input type = "radio"name ="personalvisit">
+      </div>
+      <div>
+        Less than $50 <input type = "radio"name ="lessthan50">
+        Between $50 and $100 <input type = "radio"name ="between50and100">
+        Above $100 <input type ="radio"name ="above100">
+      </div> 
+      
+      <div>
+        <input type = "text"name ="email" placeholder = "Email">
+      </div>  
+      <div>
+        By checking this, you agree to the terms <input type = "radio"name ="acceptterms">
+        
+      </div> 
+      <div class = "g-recaptcha" data-sitekey ="6LfotUYdAAAAAFBe7qQEqCpsS00bpafOVIrpRGjS"></div>
+
+      <div>
+        <input type = "submit"name ="submit" value = "Submit Info">
+      </div>   
+    </form>
+   
+   
+</body>
+</html>
