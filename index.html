@@ -4,55 +4,74 @@
   <meta charset="utf-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="datasurveycss.css">
-  <script async src="https://www.google.com/recaptcha/api.js">  </script>
-
-  <title></title>
+  
+  <script type = "text/javascript" defer src = "data.js"></script>
+  
+  <title></title> 
 </head>
+
+
 <body>
-  bleh test
-    <form action ="test.html" method="get"> <!-- Form 1-->
+ 
+    <form id = "myForm" action ="resultsverificationpage.html" method="get"> <!-- Form 1-->
       <div>
-        <input type = "text"name ="lastname" placeholder = "Last Name">
-        <input type = "text"name ="fistname" placeholder = "First Name">
+        required
+        <input type = "text"id ="lastname" name ="lastname" placeholder = "Last Name" required>
+        <input type = "text"id ="fistname" name ="firstname" placeholder = "First Name" required>
       </div>
-      <div>
-        None <input type = "radio"name ="none">
-        Student <input type = "radio"name ="student">
-        Professor <input type = "radio"name ="professor">
-        Staff<input type = "radio"name ="staff">
-        Retired <input type = "radio"name ="retired">
+      <div> 
+        <select name = "rank" required>
+          <option value ="None">None</option>
+          <option value ="Student">Student</option>
+          <option value ="Professor">Professor</option>
+          <option value ="Staff">Staff</option>
+          <option value ="Retired">Retired</option>
+        </select>
       </div>
+      
+        
+   
       <div>
-        <input type = "text"name ="height" placeholder = "Height (Feet, Inches)">
+        Height: <input type = "text" id = "feet" name ="feet" placeholder = "Feet">"
+        <input type = "text"name ="inches" placeholder = "Inches">''
       </div>
       <div>
         <input type = "text"name ="phone" placeholder = "Phone Number">
       </div>
       <div>
-        <input type = "text"name ="address" placeholder = "Address with Zip Code">
+        <input type = "text"name ="address" placeholder = "Street Address" required>
+        <input type = "text"name ="city" placeholder = "City" required>
+        <input type = "text"name ="zipcode" placeholder = "State Zip Code" required>
       </div> 
       <div>
-        Email <input type = "radio"name ="email">
-        Phone <input type = "radio"name ="phone">
-        Facebook <input type ="radio"name ="facebook">
-        Twitter <input type = "radio"name ="twitter">
-        Surface Mail <input type = "radio"name ="surfacemail">
-        Personal Visit <input type = "radio"name ="personalvisit">
+        Email <input type = "checkbox"id="checkboxemail" value = "checkboxemail" onclick="checkboxemailFunction()">
+    
+    
+        Phone <input type = "checkbox"id ="phone" value = "phone">
+        Facebook <input type ="checkbox"id ="facebook" value = "facebook">
+        Tweeter <input type = "checkbox"id ="tweeter" value = "tweeter">
+        Surface Mail <input type = "checkbox"id ="surfacemail" value = "surfacemail">
+        Personal Visit <input type = "checkbox"id ="personalvisit" value = "personalvisit">
+        
+        
       </div>
       <div>
-        Less than $50 <input type = "radio"name ="lessthan50">
-        Between $50 and $100 <input type = "radio"name ="between50and100">
-        Above $100 <input type ="radio"name ="above100">
+        Select your budget
+        <select name = "budget">
+          <option value ="lessthan50">Less than $50</option>
+          <option value ="between50and100">Between $50 and $100</option>
+          <option value ="above100">Above $100</option>
+        </select>
       </div> 
       
       <div>
-        <input type = "text"name ="email" placeholder = "Email">
+        <input type = "text"name ="useremail" placeholder = "Email" required>
       </div>  
       <div>
-        By checking this, you agree to the terms <input type = "radio"name ="acceptterms">
+        By checking this, you agree to the terms <input type = "checkbox"name ="acceptterms" required>
         
       </div> 
-      <div class = "g-recaptcha" data-sitekey ="6LfotUYdAAAAAFBe7qQEqCpsS00bpafOVIrpRGjS"></div>
+      <div class = "g-recaptcha" data-sitekey ="6LfotUYdAAAAAFBe7qQEqCpsS00bpafOVIrpRGjS" required></div>
 
       <div>
         <input type = "submit"name ="submit" value = "Submit Info">
@@ -61,4 +80,5 @@
    
    
 </body>
+
 </html>
