@@ -1,9 +1,7 @@
 
-function validation() {
-    
-}
 
 
+// functions on click in datasurveyform.html to add to localStorage
 function checkboxemailFunction() {
     if (document.getElementById("checkboxemail").checked == true) {
         localStorage.setItem("checkboxemail", "Email"); 
@@ -33,6 +31,37 @@ function facebookFunction() {
         console.log("CRINGE")
     }    
 }
+
+function tweeterFunction() {
+    if (document.getElementById("tweeter").checked == true) {
+        localStorage.setItem("tweeter", "Tweeter"); 
+        console.log("SO TRUE")
+    } else {
+        localStorage.removeItem("tweeter", "Tweeter"); 
+        console.log("CRINGE")
+    }    
+}
+
+function surfacemailFunction() {
+    if (document.getElementById("surfacemail").checked == true) {
+        localStorage.setItem("surfacemail", "Surface Mail"); 
+        console.log("SO TRUE")
+    } else {
+        localStorage.removeItem("surfacemail", "Surface Mail"); 
+        console.log("CRINGE")
+    }    
+}
+
+function personalvisitFunction() {
+    if (document.getElementById("personalvisit").checked == true) {
+        localStorage.setItem("personalvisit", "SPersonal Visit"); 
+        console.log("SO TRUE")
+    } else {
+        localStorage.removeItem("personalvisit", "Personal Visit"); 
+        console.log("CRINGE")
+    }    
+}
+
 
 
 
@@ -215,5 +244,5 @@ firstname.onblur = function validation (event) {
     if (x > 3) {
         firstname.setCustomValidity("First name cannot be over 40 characters.");
     }
-} */
+} 
 
