@@ -245,4 +245,4 @@ firstname.onblur = function validation (event) {
         firstname.setCustomValidity("First name cannot be over 40 characters.");
     }
 } 
-
+*/
