@@ -23,11 +23,11 @@ function phoneFunction() {
 }
 
 function facebookFunction() {
-    if (document.getElementById("phone").checked == true) {
-        localStorage.setItem("phone", "Phone"); 
+    if (document.getElementById("facebook").checked == true) {
+        localStorage.setItem("facebook", "facebook"); 
         console.log("SO TRUE")
     } else {
-        localStorage.removeItem("phone", "Phone"); 
+        localStorage.removeItem("facebook", "facebook"); 
         console.log("CRINGE")
     }    
 }
