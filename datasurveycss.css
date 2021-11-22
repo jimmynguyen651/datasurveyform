@@ -14,7 +14,7 @@ button[name="addressbutton"] {
 .addressforms label {
     display:inline-block;
     margin-bottom: 5px;
-    font-size: 50%;
+    font-size: 100%;
    
     
 }
@@ -22,7 +22,7 @@ button[name="addressbutton"] {
 .addressforms input {
     display:inline-block; 
     margin-bottom: 5px;
-    font-size: 50%;
+    font-size: 70%;
 }
 
 /* nput[id="firstandlastname"] {
