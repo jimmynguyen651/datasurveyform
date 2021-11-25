@@ -8,51 +8,79 @@
   <script type = "text/javascript" defer src = "data.js">localStorage</script>
   <title></title>
 </head>
+
 <body>
   
     <form action ="datasurveyform.html" method="get"> <!-- Form 1-->
+
+      <section class ="bg-dark text-light p-5 pb-1 text-center text-sm-center">
+        
+        <div class = "container">
+          <h1>Thank you for filling out the survey!</h1>
+          <h5>The<span class = "text-warning"> data you provided</span> is displayed below.</h5>
+        </div>
+        </section>
+
+
+      <section class ="bg-dark text-light pb-1 pt-3 text-center text-sm-center">
+        
+        <div class = "container">
+        
+          
+      <div>
       
-      <div>
-          Last Name: <span id = "result-lastname">test</span>
+        <span class = "text-warning"><u>Your Name:</u></span> 
+        <h6><span id = "result-firstname">test</span>&nbsp;<span id = "result-lastname"> </span>  </h6> 
+          
+          
       </div>
+    
       <div>
-         First Name: <span id = "result-firstname">test</span>
-      </div>
-      <div>
-        Title: <span id = "result-title">test</span>
+        <span class = "text-warning"><u>Preferred Title:</u></span> 
+        <h6><span id = "result-title">test</span></h6>
      </div>
       <div>
-        Height: <span id = "result-feet">Not filled</span><span id = "result-inches"></span>
+        <span class = "text-warning"><u>Height:</u></span> 
+        <h6><span id = "result-feet">Not filled</span><span id = "result-inches"></span></h6>
       </div>
       <div>
-        Email: <span id = "result-useremail">Not filled</span>
+        <span class = "text-warning"><u>Your Email:</u></span> 
+        <h6><span id = "result-useremail">Not filled</span></h6>
       </div>
       <div>
-        Phone Number: <span id = "result-phonenumber">Not provided</span>
+        <span class = "text-warning"><u> Your Phone Number</u>:</u></span> 
+        <h6><span id = "result-phonenumber">Not provided</span></h6>
       </div>
       <div>
-        Address: <span id = "result-address">address here</span>, 
+        <span class = "text-warning"><u> Your Address</u>:</u></span> 
+        <h6><span id = "result-address">address here</span>, 
         <span id = "result-city">city here</span> 
-        <span id = "result-statezipcode">zipcode here</span>
+        <span id = "result-statezipcode">zipcode here</span></h6>
       </div>
       <div>
-        Services required: <span id = "serviceblank"></span>
-        <span id = "result-checkboxemail">email</span>
-        <span id = "result-phone"> phone</span>
-        <span id = "result-facebook"> facebook</span>
-        <span id = "result-tweeter"> tweeter</span>
-        <span id = "result-surfacemail"> surface mail</span>
-        <span id = "result-personalvisit"> personal visit</span>
+        <span class = "text-warning"><u>Services Required:</u></span> 
+        <h6><span id = "serviceblank"></span></h6>
+        <h6><span id = "result-checkboxemail">email</span></h6>
+        <h6><span id = "result-phone"> phone</span></h6>
+        <h6><span id = "result-facebook"> facebook</span></h6>
+        <h6><span id = "result-tweeter"> tweeter</span></h6>
+        <h6><span id = "result-surfacemail"> surface mail</span></h6>
+        <h6><span id = "result-personalvisit"> personal visit</span></h6>
         
       </div>
       <div>
-        Budget: <span id = "result-budget">Not provided</span>
+        <span class = "text-warning"><u> Monthly Budget</u>:</u></span> 
+        <h6> <span id = "result-budget">Not provided</span> </h6>
       </div>
 
-      <div>
-        <input type = "submit"name ="submit" value = "Return to Survey Page">
-      </div>   
+      <div class = "pt-4 pb-5">
+        <h6> <span class = "text-success">You've finished</span>, but feel free to return to the survey page if you want to do another!</h6>
+        <h6><input type = "submit" class ="btn p-1 btn-primary" name ="submit" value = "Return to Survey Page"> </h6>
+      </div>
+    </div>
+    </section>  
     </form>   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
