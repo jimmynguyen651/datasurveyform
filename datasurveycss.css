@@ -1,0 +1,74 @@
+
+* {
+    box-sizing: border-box;
+}
+
+div[name="titlebox"] {
+    justify-content: center;
+}
+
+button[name="addressbutton"] {
+    font-size: 15px;
+}
+
+.addressforms {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+   
+    vertical-align: middle;
+}
+
+#addressforms label {
+    
+    margin-bottom: 5px;
+    font-size: 100%;
+   
+    
+}
+
+.g-recaptcha {
+    display: inline-block;
+}
+
+#addressforms input {
+    display:inline-block; 
+   
+    font-size: 70%;
+    border-radius: 6px;
+   border-color: grey;
+    
+  
+    
+  
+}
+
+.requirement-warning {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.nameLabel {
+    font-size: 30px;
+}
+
+
+
+
+
+/* nput[id="firstandlastname"] {
+    width:50px;
+} */
+
+ /*body {
+    background-color: #2C78CF;
+    display: flex;
+    align-items:center;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    min-height: 100vh;
+   
+} */
+
+
