@@ -1,5 +1,5 @@
 
-
+console.log("bleh2");
 
 // functions on click in datasurveyform.html to add to localStorage
 function checkboxemailFunction() {
@@ -24,10 +24,10 @@ function phoneFunction() {
 
 function facebookFunction() {
     if (document.getElementById("facebook").checked == true) {
-        localStorage.setItem("facebook", "facebook"); 
+        localStorage.setItem("facebook", "Facebook"); 
         console.log("SO TRUE")
     } else {
-        localStorage.removeItem("facebook", "facebook"); 
+        localStorage.removeItem("facebook", "Facebook"); 
         console.log("CRINGE")
     }    
 }
@@ -45,20 +45,20 @@ function tweeterFunction() {
 function surfacemailFunction() {
     if (document.getElementById("surfacemail").checked == true) {
         localStorage.setItem("surfacemail", "Surface Mail"); 
-        console.log("SO TRUE")
+        
     } else {
         localStorage.removeItem("surfacemail", "Surface Mail"); 
-        console.log("CRINGE")
+        
     }    
 }
 
 function personalvisitFunction() {
     if (document.getElementById("personalvisit").checked == true) {
-        localStorage.setItem("personalvisit", "SPersonal Visit"); 
-        console.log("SO TRUE")
+        localStorage.setItem("personalvisit", "Personal Visit"); 
+        
     } else {
         localStorage.removeItem("personalvisit", "Personal Visit"); 
-        console.log("CRINGE")
+        
     }    
 }
 
@@ -78,14 +78,18 @@ window.addEventListener('load', () => {
     const params = (new URL(document.location)).searchParams;
     const lastname = params.get('lastname');
     const firstname = params.get('firstname');
+    const title = params.get("title");
     const feet = params.get("feet");
     const inches = params.get("inches");
+    const useremail = params.get("useremail");
     const phoneNumber = params.get("phonenumber");
-    const address = params.get("address");
+    const address = params.get("streetaddress");
     const city = params.get("city");
     const zipcode = params.get("zipcode");
+    const budget = params.get("budget");
+    
 
-    const title = params.get("title");
+    
     
 
     // used localStorage as workaround for params not working with checkboxes
@@ -96,8 +100,9 @@ window.addEventListener('load', () => {
     const surfacemailStore = localStorage.getItem('surfacemail');
     const personalvisitStore = localStorage.getItem('personalvisit');
 
-    const budget = params.get('budget');
-    const useremail = params.get('useremail');
+    
+
+   
     
     
     
@@ -123,11 +128,14 @@ window.addEventListener('load', () => {
     if (inches == "") {
         document.getElementById('result-inches').innerHTML = " filled";
     } else {
-        document.getElementById('result-inches').innerHTML = inches + "\"";
+        document.getElementById('result-inches').innerHTML = inches 
     }
     
-    
+    document.getElementById('result-useremail').innerHTML = useremail;
     document.getElementById('result-phonenumber').innerHTML = phoneNumber;
+    document.getElementById('result-address').innerHTML = address;
+    document.getElementById('result-city').innerHTML = city;
+    document.getElementById('result-statezipcode').innerHTML = zipcode;
    
     
     // functions for transferring data from multiple selection survey to results page
@@ -136,7 +144,7 @@ window.addEventListener('load', () => {
         count++;
         console.log(count);
     } else {
-        document.getElementById('result-checkboxemail').innerHTML = checkboxemailStore;
+        document.getElementById('result-checkboxemail').innerHTML =  "- " + checkboxemailStore;
     }
 
     if (phoneStore == null) {
@@ -144,7 +152,7 @@ window.addEventListener('load', () => {
         count++;
         console.log(count);
     } else {
-        document.getElementById('result-phone').innerHTML = phoneStore;
+        document.getElementById('result-phone').innerHTML = "- " +  phoneStore;
     }
 
     if (facebookStore == null) {
@@ -152,7 +160,7 @@ window.addEventListener('load', () => {
         count++;
         console.log(count);
     } else {
-        document.getElementById('result-facebook').innerHTML = facebookStore;
+        document.getElementById('result-facebook').innerHTML = "- " + facebookStore;
     }
 
     if (tweeterStore == null) {
@@ -160,7 +168,7 @@ window.addEventListener('load', () => {
         count++;
         console.log(count);
     } else {
-        document.getElementById('result-tweeter').innerHTML = tweeterStore;
+        document.getElementById('result-tweeter').innerHTML = "- " + tweeterStore;
     }
 
     if (surfacemailStore == null) {
@@ -168,7 +176,7 @@ window.addEventListener('load', () => {
         count++;
         console.log(count);
     } else {
-        document.getElementById('result-surfacemail').innerHTML = surfacemailStore;
+        document.getElementById('result-surfacemail').innerHTML = "- " +  surfacemailStore;
     }
 
     if (personalvisitStore == null) {
@@ -176,7 +184,7 @@ window.addEventListener('load', () => {
         count++;
         console.log(count);
     } else {
-        document.getElementById('result-personalvisit').innerHTML = personalvisitStore;
+        document.getElementById('result-personalvisit').innerHTML = "- " +  personalvisitStore;
     }
 
 
@@ -189,7 +197,7 @@ window.addEventListener('load', () => {
 
     document.getElementById('result-budget').innerHTML = budget;
 
-    document.getElementById('result-useremail').innerHTML = useremail;
+    
        
 });
 
@@ -200,49 +208,18 @@ window.addEventListener('load', () => {
         $recaptcha.setAttribute("required", "required");
         
     }
-}; */
-
-
-
-
-
-
-
-
-
-
-
-// validation
-
-const form = document.getElementById('myForm');
-
-
-/*form.addEventListener('submit', (e) => {
-    let messages = []
-    if (feet.value === '' || feet.value == null) {
-        // e.preventDefault();
-       //  alert("AAAAAAAAAAAA")
-        messages.push('Name is required')
-        
-    }
-    
-    if (firstname.value.length > 40) {
-        e.preventDefault();
-        
-    }
-
-    if (lastname.value.length > 1 ) {
-        e.preventDefault();
-        lastname.setCustomValidity("Last name cannot be over 40 characters.");
-    }
-    
-}) 
-
-firstname.onblur = function validation (event) {
-    x = event.target.value;
-
-    if (x > 3) {
-        firstname.setCustomValidity("First name cannot be over 40 characters.");
-    }
-} 
+}; 
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
