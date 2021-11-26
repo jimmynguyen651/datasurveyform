@@ -1,17 +1,13 @@
+// hides second section
+sectionaddress.style.display = "none";
+
 var sectionpersonal= document.getElementById('sectionpersonal');
 sectionpersonal.style.display = "block";
-var tracker = 0;
+var tracker = 0; // tracker variable exists to validate if all of the necessary forms are filled
 
-var lastname = document.getElementById('lastname');
-var lastnamecheck = document.getElementById('lastnamecheck');
-var lastnameexclamation = document.getElementById('lastnameexclamation'); 
-var lastnameerror = document.getElementById('lastnameerror');
+// if tracker variable > 0, do not proceed.
 
-lastnamecheck.style.display = "none";
-lastnameexclamation.style.display = "none";
-lastnameerror.style.display = "none";
-var lastnametracker = 1;
-
+// captcha function. will not allow submission without completing it
 window.onload = function() {
   var $recaptcha = document.querySelector('#g-recaptcha-response');
 
@@ -21,6 +17,18 @@ window.onload = function() {
   }
 }; 
 
+var lastname = document.getElementById('lastname');
+var lastnamecheck = document.getElementById('lastnamecheck');
+var lastnameexclamation = document.getElementById('lastnameexclamation'); 
+var lastnameerror = document.getElementById('lastnameerror');
+
+lastnamecheck.style.display = "none";
+lastnameexclamation.style.display = "none";
+lastnameerror.style.display = "none";
+var lastnametracker = 1; // trackers for each field add to total tracker variable.
+
+
+// validation function that removes/adds html based on if field is between 1 to 40 chars
 function lastnameFunction() {
   
   if (lastname.value.length > 40 || lastname.value.length < 1) {
@@ -75,6 +83,8 @@ function firstnameFunction() {
   }
  
 } 
+
+// regex that returns if it contains only numbers or not
 var numbers = new RegExp('^[0-9]');
 
 var feet = document.getElementById('feet');
@@ -89,7 +99,9 @@ feeterror.style.display = "none";
 
 var feettracker = 0;
 
-
+// if feet has no value, do not do anything
+// but if feet has a value entered, do validate it
+// same follows for inches and phone number since they are optional
 function feetFunction() {
   if (feet.value) {
     feettracker = 1;
@@ -207,14 +219,14 @@ phonenumbercheck.style.display = "none";
 phonenumberexclamation.style.display = "none";
 phonenumbererror.style.display = "none";
 
-var phonenumbertracker = 1;
+var phonenumbertracker = 0;
 
 
 function phonenumberFunction() {
-  // this regex demands properly formatted phone number
+ 
 if (phonenumber.value) {
     phonenumbertracker = 1;
-  
+   // this regex demands properly formatted phone number
   if (!(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phonenumber.value) )) {
     phonenumbercheck.style.display = "none";
     phonenumberexclamation.style.display = "inline";
@@ -250,18 +262,17 @@ var personalexclamation = document.getElementById('personalexclamation');
 personalerror.style.display = "none";
 personalexclamation.style.display = "none";
 
+// variable acting as a bool if you should be on the first or second section
 var onPersonal = 1;
 
 
+// changes button colors and sections via validation
 function nextSection() {
+  // if tracker = 0, it means that all fields are valid. if above 0, one or more fields are not
   tracker = lastnametracker + firstnametracker + feettracker + inchestracker + emailtracker + phonenumbertracker;
-  console.log(tracker);
   if (tracker > 0) {
       personalerror.style.color = "red";
       personalerror.style.display = "inline"
-      
-    
-  
 } else {
   sectionpersonal.style.display = "none";
   sectionaddress.style.display ="block";
@@ -274,6 +285,7 @@ function nextSection() {
   }
 }
 
+// code for buttons that change appearance and section when clicked on
 var personalbutton = document.getElementById("personalbutton");
 var addressbutton = document.getElementById("addressbutton");
 function personalSection() {
@@ -308,9 +320,7 @@ function streetaddressFunction() {
     streetaddresserror.style.display = "inline";
     streetaddress.style.border = "2px solid red";
     streetaddresstracker = 1;
-    
-
-   
+  
   } else{ 
     streetaddresscheck.style.display = "inline";
     streetaddressexclamation.style.display = "none";
@@ -341,8 +351,6 @@ function cityFunction() {
     cityerror.style.display = "inline";
     city.style.border = "2px solid red";
     citytracker = 1;
-    
-
    
   } else{ 
     citycheck.style.display = "inline";
@@ -374,9 +382,7 @@ function zipcodeFunction() {
     zipcodeerror.style.display = "inline";
     zipcode.style.border = "2px solid red";
     zipcodetracker = 1;
-    
-
-   
+  
   } else{ 
     zipcodecheck.style.display = "inline";
     zipcodeexclamation.style.display = "none";
@@ -387,6 +393,7 @@ function zipcodeFunction() {
     
   }
 } 
+// tracker for second page to see if it's eligible to be submitted
 var submitTracker = 0;
 var submitbutton = document.getElementById("submitdata");
 var submitexclamation = document.getElementById("submitexclamation");
@@ -403,25 +410,14 @@ var termserror = document.getElementById('termserror')
 
 termserror.style.display = "none";
 
-
-window.onload = function() {
-  var $recaptcha = document.querySelector('#g-recaptcha-response');
-
-  if($recaptcha) {
-      $recaptcha.setAttribute("required", "required");
-  }
-};
-
-
+// function that validates if submission will be allowed based on if forms are filled
 function addresssubmitcheck(event) {
   
   submitTracker = streetaddresstracker + citytracker + zipcodetracker;
   console.log(submitTracker);
-
+  // extra bit that confirms if terms were accepted
   if (acceptterms.checked == true) {
-    
-    termserror.style.display = "none";
-    
+    termserror.style.display = "none"; 
     
   } else {
     event.preventDefault();
@@ -458,12 +454,12 @@ function addresssubmitcheck(event) {
 
 
 
-// make this pop up an error
+
 
 
 
  // Section Hide
-sectionaddress.style.display = "none";
+// sectionaddress.style.display = "none";
 //sectionpersonal.style.display = "none";
 
 
